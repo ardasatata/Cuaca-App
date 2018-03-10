@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cuaca</string>
+    <string name="title_activity_main_weather">MainWeather</string>
+
+    <string name="title_activity_detail_weather">DetailWeather</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_search_city">SearchCity</string>
+</resources>
