@@ -1,0 +1,74 @@
+[
+  {
+    "id": 707860,
+    "name": "Hurzuf",
+    "country": "UA",
+    "coord": {
+      "lon": 34.283333,
+      "lat": 44.549999
+    }
+  },
+   {
+     "id": 1642907,
+     "name": "Daerah Khusus Ibukota Jakarta",
+     "country": "ID",
+     "coord": {
+     "lon": 106.858398,
+     "lat": -6.2182
+     }
+   },
+  {
+    "id": 7839805,
+    "name": "Melbourne",
+    "country": "AU",
+    "coord": {
+      "lon": 144.944214,
+      "lat": -37.813061
+    }
+  },
+     {
+       "id": 1636722,
+       "name": "Malang",
+       "country": "ID",
+       "coord": {
+         "lon": 112.630402,
+         "lat": -7.9797
+       }
+     },
+{
+    "id": 1621176,
+    "name": "Daerah Istimewa Yogyakarta",
+    "country": "ID",
+    "coord": {
+      "lon": 110.5,
+      "lat": -7.75
+    }
+  },
+  {
+    "id": 1625084,
+    "name": "Tangerang",
+    "country": "ID",
+    "coord": {
+      "lon": 106.629997,
+      "lat": -6.17806
+    }
+  },
+  {
+    "id": 1643012,
+    "name": "Provinsi Papua",
+    "country": "ID",
+    "coord": {
+      "lon": 138,
+      "lat": -4.75
+    }
+  },
+  {
+    "id": 1282027,
+    "name": "Male",
+    "country": "MV",
+    "coord": {
+      "lon": 73.508881,
+      "lat": 4.1748
+    }
+  }
+]

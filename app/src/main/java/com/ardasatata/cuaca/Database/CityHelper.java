@@ -75,6 +75,7 @@ public class CityHelper {
         finally {
             database.setTransactionSuccessful();
             database.endTransaction();
+            System.out.println("city inserted");
         }
     }
 

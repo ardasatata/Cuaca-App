@@ -9,6 +9,7 @@
     tools:showIn="@layout/activity_search_city">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/list_cities" />
