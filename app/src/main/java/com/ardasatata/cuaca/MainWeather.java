@@ -40,6 +40,7 @@ public class MainWeather extends AppCompatActivity {
         recyclerCity.setAdapter(cityAdapter);
         recyclerCity.setLayoutManager(new LinearLayoutManager(MainWeather.this));
 
+
         swipeRefreshLayout = findViewById(R.id.swipe_main);
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

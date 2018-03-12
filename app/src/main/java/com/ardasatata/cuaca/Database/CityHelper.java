@@ -88,7 +88,7 @@ public class CityHelper {
             args.put(NAME, city.getName());
             args.put(TEMP, city.getTemp());
             args.put(WEATHER, city.getWeather());
-            return database.update(TABLE_CITY, args, _ID + "= '" + city.getId() + "'", null);
+            return database.update(TABLE_CITY, args, ID_CITY + "= '" + city.getId_city() + "'", null);
         }
         finally {
             database.setTransactionSuccessful();

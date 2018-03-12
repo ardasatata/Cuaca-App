@@ -135,23 +135,28 @@ public class CitiesAdapter extends RecyclerView.Adapter<CitiesAdapter.CustomView
             ArrayList<City> allCity = cityHelper.getAllData();
             cityHelper.close();
 
+            boolean duplicate=false;
+
             for (City city1 : allCity){
                 if (city1.getId_city()==city.getId_city()){
-                    CharSequence text = "The city already added!";
+                    CharSequence text = "This city already added in your list!";
                     int duration = Toast.LENGTH_SHORT;
-
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();
-                    break;
-                }
-                else{
-                    cityHelper.open();
-                    cityHelper.insert(city);
-                    cityHelper.close();
+                    duplicate=true;
                     break;
                 }
             }
+            if (!duplicate){
+                cityHelper.open();
+                cityHelper.insert(city);
+                cityHelper.close();
 
+                CharSequence text = "The city already added!";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
+            }
 
         }
     }

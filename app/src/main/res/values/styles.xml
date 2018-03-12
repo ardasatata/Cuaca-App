@@ -3,9 +3,10 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#009688</item>
+        <item name="colorAccent">#FF9800</item>
+        <item name="android:navigationBarColor">#009688</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -29,11 +30,11 @@
         <item name="android:background">@color/black_overlay</item>
     </style>
 
-    <style name="TransparentTheme" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="DetailTheme" parent="android:Theme.Material.Light.NoActionBar">
 
         <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:background">@android:color/holo_blue_dark</item>
+        <item name="android:background">#009688</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 

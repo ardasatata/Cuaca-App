@@ -12,5 +12,6 @@
         android:id="@+id/recyclerSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
         tools:listitem="@layout/list_cities" />
 </android.support.constraint.ConstraintLayout>

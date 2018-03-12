@@ -3,10 +3,17 @@ package com.ardasatata.cuaca;
 import android.app.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.view.View;
 import android.widget.TextView;
+
+import com.ardasatata.cuaca.Database.City;
+import com.ardasatata.cuaca.Database.CityHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,10 +29,20 @@ public class DetailWeather extends Activity {
 
     String datax;
 
+    CityHelper cityHelper;
+
+    City cityUpdate;
+
+    float tempConvert;
+
+    ConstraintLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_weather);
+
+        layout = findViewById(R.id.layout_detail);
 
         Intent intent = getIntent();
         String message = intent.getStringExtra(CityAdapter.EXTRA_MESSAGE);
@@ -36,7 +53,11 @@ public class DetailWeather extends Activity {
         cityTemp = findViewById(R.id.city_temperature);
         cityWeather = findViewById(R.id.city_weather);
 
+        cityHelper = new CityHelper(this);
+
         new JSONWeatherTask().execute();
+
+
 
     }
 
@@ -83,13 +104,23 @@ public class DetailWeather extends Activity {
 
                 System.out.println(getString("name",jObj));
 
+                tempConvert = Float.parseFloat(mainObj.getString("temp"));
+                tempConvert -= 273.15F;
+
+
                 cityName.setText(getString("name",jObj));
-                cityTemp.setText(mainObj.getString("temp"));
-                cityWeather.setText(getString("description",JSONWeather));
+                cityTemp.setText(Integer.toString((int) tempConvert)+ "\u2103");
+                cityWeather.setText(getString("main",JSONWeather));
+
+                cityUpdate = new City(Integer.parseInt(id_city),getString("name",jObj),(int) tempConvert,getString("main",JSONWeather));
+
+                updateWeatherValue(cityUpdate);
+                setWeatherColor(getString("main",JSONWeather));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
 //
 //            try {
 //
@@ -181,4 +212,38 @@ public class DetailWeather extends Activity {
     private static int  getInt(String tagName, JSONObject jObj) throws JSONException {
         return jObj.getInt(tagName);
     }
+
+    private void updateWeatherValue(City city){
+        cityHelper.open();
+        cityHelper.update(city);
+        cityHelper.close();
+    }
+
+    public void setWeatherColor(String weather){
+        int color;
+        switch (weather){
+            case "Clear":
+                color = Color.parseColor("#FFEB3B");
+                break;
+            case "Rain":
+                color = Color.parseColor("#1565C0");
+                break;
+            case "Clouds":
+                color = Color.parseColor("#4DB6AC");
+                break;
+            default:
+                color = Color.parseColor("#000000");
+        }
+
+        setActivityBackgroundColor(color);
+    }
+
+    public void setActivityBackgroundColor(int color) {
+        View view = getWindow().getDecorView();
+        layout.setBackgroundColor(color);
+        view.setBackgroundColor(color);
+
+    }
 }
+
+

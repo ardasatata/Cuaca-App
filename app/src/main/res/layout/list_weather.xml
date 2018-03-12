@@ -33,10 +33,20 @@
                 android:textSize="24sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/list_city_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Snow"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/list_city_temperature"
@@ -45,19 +55,10 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_medium"
                     android:text="3°"
+                    android:textAlignment="textEnd"
                     android:textColor="@android:color/white"
                     android:textSize="36sp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/list_city_weather"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto_medium"
-                    android:text="Snow"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp" />
             </LinearLayout>
 
         </LinearLayout>

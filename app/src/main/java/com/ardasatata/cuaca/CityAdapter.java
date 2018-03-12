@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ardasatata.cuaca.Database.CitiesHelper;
 import com.ardasatata.cuaca.Database.City;
@@ -70,7 +71,7 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CustomViewHold
         final String cityWeather = current.getWeather();
 
         myHolder.cityName.setText(cityName);
-        myHolder.cityTemp.setText(Integer.toString(cityTemp));
+        myHolder.cityTemp.setText(Integer.toString(cityTemp)+ "\u2103");
         myHolder.cityWeather.setText(cityWeather);
 
         setAnimation(holder.itemView, position);
@@ -107,6 +108,18 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CustomViewHold
             cityWeather = (TextView) itemView.findViewById(R.id.list_city_weather);
 
             itemView.setOnClickListener(this);
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    CharSequence text = "Long CLikc";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    return false;
+                }
+            });
+
         }
 
 
@@ -136,6 +149,8 @@ public class CityAdapter extends RecyclerView.Adapter<CityAdapter.CustomViewHold
 //            cityHelper.insert(city);
 //            cityHelper.close();
         }
+
+
     }
 
 
